@@ -17,7 +17,11 @@ import com.bawei.liruilong.view.fragment.MyFragment;
 import com.bawei.liruilong.view.fragment.ShopFragment;
 
 import java.util.ArrayList;
-
+/**
+ *@date:2019/12/3
+ *@author:天祈
+ *@description
+ */
 public class MainActivity extends BaseActivity {
 
 
@@ -27,10 +31,12 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void initData() {
+        //添加fragment
         list.add(new HomeFragment());
         list.add(new ShopFragment());
         list.add(new MyFragment());
 
+        //设置适配器
         vp.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
             @NonNull
             @Override
@@ -50,6 +56,7 @@ public class MainActivity extends BaseActivity {
         vp = findViewById(R.id.vp);
         rg = findViewById(R.id.rg);
 
+        //联动
         vp.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -97,5 +104,8 @@ public class MainActivity extends BaseActivity {
     }
     public void ToShopPage(){
         vp.setCurrentItem(1);
+    }
+    public void ToHomePage(){
+        vp.setCurrentItem(0);
     }
 }

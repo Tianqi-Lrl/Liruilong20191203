@@ -29,6 +29,7 @@ public class HomeFragment extends BaseFragment {
         rl = view.findViewById(R.id.rl);
         b = view.findViewById(R.id.b);
 
+        //点击切换页面
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -45,6 +46,7 @@ public class HomeFragment extends BaseFragment {
 
     @Override
     protected void initData() {
+        //有网文本无网图片
         if (NetUtil.getInstance().HasNet(getContext())){
             tv.setVisibility(View.VISIBLE);
             rl.setVisibility(View.GONE);
